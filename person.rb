@@ -6,7 +6,7 @@ class Person
     self.name = options[:name]
     self.age = options[:age]
     self.destination = options.fetch :destination
-    self.floor = options.fetch :floor
+    floor = options.fetch :floor
   end
 
 end
