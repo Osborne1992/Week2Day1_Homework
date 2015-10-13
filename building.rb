@@ -7,7 +7,7 @@ class Building
     self.post_code = options[:post_code]
     self.floors = options.fetch(:floors, 2)
     @lifts = options[:lifts].to_i.times.map { Lift.new }
-    @occupants = []
+    self.occupants = []
   end
 
 end

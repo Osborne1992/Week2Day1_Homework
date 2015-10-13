@@ -29,7 +29,7 @@ class Lift
   end
 
   def leave(passenger)
-    occupants << passengers.shift unless empty?
+    @occupants << passengers.shift unless empty?
   end
 
   def overloaded?
