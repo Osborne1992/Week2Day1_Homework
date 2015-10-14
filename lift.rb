@@ -1,11 +1,12 @@
 class Lift
   attr_accessor :max_people, :floor, :name
-  attr_reader :passengers, :building
+  attr_reader :passengers
 
   def initialize(options={})
     self.floor = 0
     self.max_people  = 8
     @passengers = []
+    @building = options.fetch :building
   end
 
   def go_up
@@ -29,7 +30,7 @@ class Lift
   end
 
   def leave(passenger)
-    @occupants << passengers.shift unless empty?
+    @building.occupants << passengers.shift unless empty?
   end
 
   def overloaded?
@@ -41,3 +42,6 @@ class Lift
   end
 
 end
+
+
+

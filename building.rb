@@ -6,7 +6,7 @@ class Building
     self.name = options[:name]
     self.post_code = options[:post_code]
     self.floors = options.fetch(:floors, 2)
-    @lifts = options[:lifts].to_i.times.map { Lift.new }
+    @lifts = options[:lifts].to_i.times.map { Lift.new(building: self) }
     self.occupants = []
   end
 
